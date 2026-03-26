@@ -1,0 +1,33 @@
+fastapi==0.135.1
+uvicorn[standard]>=0.29.0
+python-dotenv>=1.0.1
+pydantic>=2.7.1
+
+# LangChain ecosystem
+langchain==1.2.11
+langchain-openai==1.1.11
+langchain-google-genai>=4.2.1
+langchain-community==0.4.1
+langchain-chroma==1.1.0
+langgraph==1.1.0
+
+# LlamaIndex
+llama-index==0.14.16
+
+# Vector DB
+chromadb==1.5.5
+
+# Tools / APIs
+tavily-python>=0.3.3
+arxiv>=2.1.0
+requests>=2.31.0
+beautifulsoup4>=4.12.3
+lxml>=5.2.2
+httpx>=0.27.0
+aiohttp>=3.9.5
+
+# Async task handling
+anyio>=4.4.0
+
+# Markdown / PDF
+markdown>=3.6
