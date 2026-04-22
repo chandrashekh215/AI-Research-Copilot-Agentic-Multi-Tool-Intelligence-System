@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ai-research-copilot-backend
+    env: python
+    pythonVersion: 3.11
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: "gunicorn -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT backend.main:app"
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+
+  - type: static_site
+    name: ai-research-copilot-frontend
+    buildCommand: "cd frontend && npm install && npm run build"
+    staticPublishPath: frontend/dist
+    routes:
+      - path: "/*"
+        destination: /index.html
